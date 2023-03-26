@@ -18,12 +18,13 @@
 
   ## Installation
   This application uses the following node packages:<br><br>
-  [express-handlebars](https://www.npmjs.com/package/express-handlebars)<br>
   [MySQL2](https://www.npmjs.com/package/mysql2)<br>
   [Sequelize](https://www.npmjs.com/package/sequelize)<br>
   [dotenv package](https://www.npmjs.com/package/dotenv)<br>
   [bcrypt package](https://www.npmjs.com/package/bcrypt)<br>
+  [express](https://www.npmjs.com/package/express)<br>
   [express-session](https://www.npmjs.com/package/express-session)<br>
+  [express-handlebars](https://www.npmjs.com/package/express-handlebars)<br>
   [connect-session-sequelize](https://www.npmjs.com/package/connect-session-sequelize)
 
 ---
