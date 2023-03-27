@@ -1,4 +1,13 @@
 <a href="/dashboard"><h1>Your Dashboard</h1></a>
 
+<div class="inner-content">
+{{#each blogposts as |blogpost| }}
+    <div>
+        <h2>{{blogpost.title}}</h2>
+        <p>{{blogpost.date_created}}</p>
+    </div>
+{{/each}} 
+</div>
+
 <a href="/newpost"><button>+ New Post</button></a>
 

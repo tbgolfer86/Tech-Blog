@@ -1,1 +1,11 @@
 <a href="/"><h1>Tech Blog</h1></a>
+
+<div class="inner-content">
+{{#each blogposts as |blogpost| }}
+    <div>
+        <h2>{{blogpost.title}}</h2>
+        <p>Posted by {{blogpost.user.username}} on {{blogpost.date_created}}</p>
+    </div>
+    <p>{{blogpost.contents}}</p>
+{{/each}} 
+</div>
