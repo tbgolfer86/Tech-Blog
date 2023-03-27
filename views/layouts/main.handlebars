@@ -9,22 +9,19 @@
 </head>
 
 <body>
-  <header>
-    <nav>
-      <a href="/">Home</a>
-      <a href="/dashboard">Dashboard</a>
-      <!-- Conditionally render login or logout links -->
-      {{#if logged_in}}
-      <a href="" id="logout">Logout</a>
-      {{else}}
-      <a href="/login">Login</a>
-      <a href="" id="logout">Logout</a>
-      {{/if}}
-    </nav>
-    <a href="/"><button><h1>Tech Blog</h1></button></a>
-  </header>
-
-  <main class="">
+  <nav>
+    <a href="/">Home</a>
+    <a href="/dashboard">Dashboard</a>
+    <!-- Conditionally render login or logout links -->
+    {{#if logged_in}}
+    <a href="" id="logout">Logout</a>
+    {{else}}
+    <a href="/login">Login</a>
+    <a href="" id="logout">Logout</a>
+    {{/if}}
+  </nav>
+  
+  <main>
     <!-- Render the sub layout -->
     {{{ body }}}
   </main>
