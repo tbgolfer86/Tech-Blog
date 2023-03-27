@@ -47,6 +47,22 @@ router.get('/dashboard', withAuth, async (req, res) => {
   }
 });
 
+router.get('/newpost', async (req, res) => {
+  try {
+    res.render('createPost');
+  } catch (err) {
+    res.status(500).json(err);
+  }
+});
+
+router.get('/editpost', async (req, res) => {
+  try {
+    res.render('editPost');
+  } catch (err) {
+    res.status(500).json(err);
+  }
+});
+
 // router.get('/BlogPost/:id', async (req, res) => {
 //   try {
 //     const BlogPostData = await BlogPost.findByPk(req.params.id, {

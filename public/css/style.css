@@ -14,6 +14,20 @@ h1 {
     font-size: larger;
 }
 
+h2 {
+    color: coral;
+    margin-bottom: 0;
+}
+
+.inner-content {
+    margin: 2%;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+}
+
 footer {
     display: flex;
     flex-direction: row;
