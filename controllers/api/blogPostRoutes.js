@@ -15,6 +15,26 @@ router.post('/', withAuth, async (req, res) => {
   }
 });
 
+router.put('/:id', withAuth, async (req, res) => {
+  try {
+    const BlogPostData = await BlogPost.update(
+      {
+        title: req.body.title,
+        contents: req.body.content
+      },
+      {
+      where: {
+        id: req.params.id,
+        user_id: req.session.user_id,
+      },
+    });
+
+    res.status(200).json(BlogPostData);
+  } catch (err) {
+    res.status(500).json(err);
+  }
+});
+
 router.delete('/:id', withAuth, async (req, res) => {
   try {
     const BlogPostData = await BlogPost.destroy({
