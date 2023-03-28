@@ -7,5 +7,7 @@
         <p>Posted by {{blogpost.user.username}} on {{blogpost.date_created}}</p>
     </div>
     <p>{{blogpost.contents}}</p>
+    {{> comments}}
+    {{> newComment}}
 {{/each}} 
 </div>
