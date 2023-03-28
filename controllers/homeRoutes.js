@@ -83,26 +83,24 @@ router.get('/editpost', async (req, res) => {
   }
 });
 
-// router.get('/BlogPost/:id', async (req, res) => {
-//   try {
-//     const BlogPostData = await BlogPost.findByPk(req.params.id, {
-//       include: [
-//         {
-//           model: User,
-//           attributes: ['name'],
-//         },
-//       ],
-//     });
+router.get('/blogpost/:id', async (req, res) => {
+  try {
+    console.log("This is the blogpost ID: " + req.params.id)
+    // Get blogpost and JOIN with user data
+    const blogPostData = await BlogPost.findByPk(req.params.id);
+    console.log(blogPostData)
 
-//     const BlogPost = BlogPostData.get({ plain: true });
-
-//     res.render('BlogPost', {
-//       ...BlogPost,
-//       logged_in: req.session.logged_in
-//     });
-//   } catch (err) {
-//     res.status(500).json(err);
-//   }
-// });
+    // Serialize data so the template can read it
+    const blogpost = blogPostData.get({ plain: true });
+    
+    // Pass serialized data and session flag into template
+    res.render('editPost', { 
+      ...blogpost, 
+      logged_in: req.session.logged_in 
+    });
+  } catch (err) {
+    res.status(500).json(err);
+  }
+});
 
 module.exports = router;
