@@ -2,13 +2,15 @@
 
 <div class="inner-content">
 {{#each blogposts as |blogpost| }}
+<a href='/'>
     <div class="post-comments" data-id="{{blogpost.id}}">
         <h2>{{blogpost.title}}</h2>
         <p>Posted by {{blogpost.user.username}} on {{blogpost.date_created}}</p>
     </div>
     <p>{{blogpost.contents}}</p>
-    {{> comments}}
-    {{> newComment}}
+</a>
+    {{!-- {{> comments}} --}}
+    {{!-- {{> createComment}} --}}
 {{/each}} 
 </div>
 

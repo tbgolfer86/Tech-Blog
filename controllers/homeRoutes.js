@@ -79,14 +79,6 @@ router.get('/newpost', async (req, res) => {
   }
 });
 
-router.get('/editpost', async (req, res) => {
-  try {
-    res.render('editPost');
-  } catch (err) {
-    res.status(500).json(err);
-  }
-});
-
 router.get('/blogpost/:id', async (req, res) => {
   try {
     console.log("This is the blogpost ID: " + req.params.id)
