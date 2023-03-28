@@ -2,8 +2,8 @@ const createCommentHandler = async (event) => {
   event.preventDefault();
     
   const message = document.querySelector('#post-comment').value.trim();
-  // const id = 
-
+  const id = event.target.getAttribute('data-id');
+  console.log(message)
   if (message) {
     const response = await fetch(`/api/comments`, {
       method: 'POST',
