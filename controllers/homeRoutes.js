@@ -79,6 +79,14 @@ router.get('/newpost', async (req, res) => {
   }
 });
 
+router.get('/newcomment', async (req, res) => {
+  try {
+    res.render('createComment');
+  } catch (err) {
+    res.status(500).json(err);
+  }
+});
+
 router.get('/blogpost/:id', async (req, res) => {
   try {
     console.log("This is the blogpost ID: " + req.params.id)
