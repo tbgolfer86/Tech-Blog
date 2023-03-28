@@ -1,25 +1,19 @@
-const createCommentHandler = async (event) => {
-    event.preventDefault();
-  
-    const message = document.querySelector('#post-comment').value.trim();
-  
-    if (message) {
-      const response = await fetch(`/api/comments`, {
-        method: 'POST',
-        body: JSON.stringify({ message }),
-        headers: {
-          'Content-Type': 'application/json',
-        },
-      });
-  
-      if (response.ok) {
-        document.location.replace('/');
-      } else {
-        alert('Failed to create comment');
-      }
-    }
+const addCommentHandler = async (event) => {
+  event.preventDefault();
+
+    const id = event.target.getAttribute('data-id');
+    console.log(id)
+    // const response = await fetch(`/api/projects/${id}`, {
+    //   method: 'GET',
+    // });
+
+    // if (response.ok) {
+    //   document.location.replace('/profile');
+    // } else {
+    //   alert('Failed to delete project');
+    // }
   };
-  
-  document
-    .querySelector('.create-comment')
-    .addEventListener('submit', createCommentHandler);
+
+document
+  .querySelector('.post-comments')
+  .addEventListener('click', addCommentHandler);
