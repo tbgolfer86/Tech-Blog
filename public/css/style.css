@@ -27,6 +27,7 @@ h1 {
 h2 {
     color: coral;
     padding-left: 20px;
+    margin: 0;
 }
 
 .inner-content {
@@ -42,6 +43,23 @@ form {
 
 label, input, button {
     margin-top: 5px;
+}
+
+.blogpost-title {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: orange;
+}
+
+.blogpost-contents {
+    margin-left: 20px;
+    margin-top: 0;
+}
+
+.blogposts {
+    display: flex;
+    flex-direction: column;
 }
 
 footer {
