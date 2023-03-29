@@ -1,14 +1,14 @@
 <a href="/"><h1>The Tech Blog</h1></a>
 
 <div class="inner-content">
-{{#each blogposts as |blogpost| }}
-<a class="blogposts" href='/blogpost/{{blogpost.id}}'>
-  <div class="post-comments blogpost-title" data-id="{{blogpost.id}}">
-    <h2>{{blogpost.title}}</h2>
-    <p>Posted by {{blogpost.user.username}} on {{blogpost.date_created}}</p>
-  </div>
-  <p class="blogpost-contents">{{blogpost.contents}}</p>
-</a>
-{{/each}} 
+  {{#each blogposts as |blogpost| }}
+  <a class="blogposts" href='/blogpost/{{blogpost.id}}'>
+    <div class="post-comments blogpost-title" data-id="{{blogpost.id}}">
+      <h2>{{blogpost.title}}</h2>
+      <p>Posted by {{blogpost.user.username}} on {{blogpost.date_created}}</p>
+    </div>
+    <p class="blogpost-contents">{{blogpost.contents}}</p>
+  </a>
+  {{/each}} 
 </div>
 

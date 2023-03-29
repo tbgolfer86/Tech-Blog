@@ -1,15 +1,16 @@
 <a href="/dashboard"><h1>Your Dashboard</h1></a>
 
 <div class="inner-content">
-{{#each blogposts as |blogpost| }}
-<a href='/dashboard/blogpost/{{blogpost.id}}'>
-  <div>
-    <h2>{{blogpost.title}}</h2>
-    <p>{{blogpost.date_created}}</p>
-  </div>
-</a>
-{{/each}} 
+  {{#each blogposts as |blogpost| }}
+  <a class="blogposts" href='/dashboard/blogpost/{{blogpost.id}}'>
+    <div class="dashboard-title">
+      <h2>{{blogpost.title}}</h2>
+      <p>{{blogpost.date_created}}</p>
+    </div>
+  </a>
+  {{/each}} 
+  <a href="/newpost"><button class="new-post-button">+ New Post</button></a>
 </div>
 
-<a href="/newpost"><button>+ New Post</button></a>
+
 

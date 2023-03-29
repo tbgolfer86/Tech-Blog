@@ -2,13 +2,17 @@
 
 <div class="inner-content">
   {{#each blogposts as |blogpost| }}
-  <h2>{{blogpost.title}}</h2>
-  <p>{{blogpost.contents}}</p>
-  <p>{{blogpost.date_created}}</p>
+  <div class="blogposts">
+    <div class="blogpost-title">
+      <h2>{{blogpost.title}}</h2>
+      <p>Posted by {{blogpost.user.username}} on {{blogpost.date_created}}</p>
+    </div>
+    <p class="blogpost-contents">{{blogpost.contents}}</p>
+  </div>
   {{/each}}
   
   {{#each comments as |comment| }}
-  <div>
+  <div class="comment-contents">
     <p>{{comment.message}}</p>
     <p>-Posted by {{comment.user.username}} on {{comment.date_created}}</p> 
   </div>
