@@ -1,22 +1,32 @@
 body {
     background-color: rgb(114, 114, 114);
-    font-family: 'Courier New', Courier, monospace;
+    font-family: Arial, Helvetica, sans-serif;
+    margin: 0;
 }
 
 a {
     text-decoration: none;
+    color: yellow;
+}
+
+nav, nav a  {
     color: aliceblue;
-    font-size: large;
+    font-size: 1.25rem;
+    background-color: black;
+    padding: 2px;
 }
 
 h1 {
-    color: rgb(51, 68, 33);
-    font-size: larger;
+    color: rgb(106 165 45);
+    background-color: black;
+    padding-left: 20px;
+    padding-top: 15px;
+    margin-top: 0;
 }
 
 h2 {
     color: coral;
-    margin-bottom: 0;
+    padding-left: 20px;
 }
 
 .inner-content {
@@ -26,6 +36,12 @@ h2 {
 form {
     display: flex;
     flex-direction: column;
+    padding-left: 20px;
+    padding-right: 20px;
+}
+
+label, input, button {
+    margin-top: 5px;
 }
 
 footer {

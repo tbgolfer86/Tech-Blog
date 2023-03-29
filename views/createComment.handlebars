@@ -1,10 +1,10 @@
-<a href="/"><h1>Tech Blog</h1></a>
+<a href="/"><h1>The Tech Blog</h1></a>
 
 <div class="inner-content">
   {{#each blogposts as |blogpost| }}
-  {{blogpost.title}}
-  {{blogpost.contents}}
-  {{blogpost.date_created}}
+  <h2>{{blogpost.title}}</h2>
+  <p>{{blogpost.contents}}</p>
+  <p>{{blogpost.date_created}}</p>
   {{/each}}
   
   {{#each comments as |comment| }}
