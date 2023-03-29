@@ -1,27 +1,20 @@
 const router = require('express').Router();
-const { BlogPost, User, Comments } = require('../models');
+const { BlogPost, User, Comment } = require('../models');
 const withAuth = require('../utils/auth');
 
 router.get('/', async (req, res) => {
   try {
-    // Get all blogposts and JOIN with user and comment data
     const blogPostData = await BlogPost.findAll({
       include: [
         {
           model: User,
           attributes: ['username'],
-        },
-        {
-          model: Comments,
-          attributes: ['message'],
-        },
+        }
       ],
     });
 
-    // Serialize data so the template can read it
     const blogposts = blogPostData.map((blogpost) => blogpost.get({ plain: true }));
 
-    // Pass serialized data and session flag into template
     res.render('homepage', { 
       blogposts, 
       logged_in: req.session.logged_in 
@@ -81,15 +74,10 @@ router.get('/newpost', async (req, res) => {
 
 router.get('/blogpost/:id', async (req, res) => {
   try {
-    console.log("This is the blogpost ID: " + req.params.id)
-    // Get blogpost and JOIN with user data
     const blogPostData = await BlogPost.findByPk(req.params.id);
-    console.log(blogPostData)
 
-    // Serialize data so the template can read it
     const blogpost = blogPostData.get({ plain: true });
     
-    // Pass serialized data and session flag into template
     res.render('editPost', { 
       ...blogpost, 
       logged_in: req.session.logged_in 
@@ -99,7 +87,7 @@ router.get('/blogpost/:id', async (req, res) => {
   }
 });
 
-router.get('/newcomment/:id', async (req, res) => {
+router.get('/comment/:id', async (req, res) => {
   try {
     console.log("This is the blogpost ID: " + req.params.id)
     res.render('createComment', { 

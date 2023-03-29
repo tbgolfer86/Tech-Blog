@@ -2,7 +2,7 @@
 
 <div class="inner-content">
 {{#each blogposts as |blogpost| }}
-<a href='/newcomment/{{blogpost.id}}'>
+<a href='/comment/{{blogpost.id}}'>
   <div class="post-comments" data-id="{{blogpost.id}}">
     <h2>{{blogpost.title}}</h2>
     <p>Posted by {{blogpost.user.username}} on {{blogpost.date_created}}</p>
