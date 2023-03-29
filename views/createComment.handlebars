@@ -1,10 +1,11 @@
 <a href="/"><h1>Tech Blog</h1></a>
 
 <div class="inner-content">
-  
-  {{comment.blogpost.title}}
-  {{comment.blogpost.contents}}
-  {{comment.blogpost.date_created}}
+  {{#each blogposts as |blogpost| }}
+  {{blogpost.title}}
+  {{blogpost.contents}}
+  {{blogpost.date_created}}
+  {{/each}}
   
   {{#each comments as |comment| }}
   <div>

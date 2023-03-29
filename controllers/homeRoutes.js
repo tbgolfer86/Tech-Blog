@@ -95,10 +95,6 @@ router.get('/blogpost/:id', async (req, res) => {
         {
           model: User,
           attributes: ['username'],
-        },
-        {
-          model: BlogPost,
-          attributes: ['title','contents','date_created'],
         }
       ],
       where: {
@@ -109,8 +105,18 @@ router.get('/blogpost/:id', async (req, res) => {
     const comments = commentData.map((comment) => comment.get({ plain: true }));
     console.log(comments)
 
+    const postData = await BlogPost.findAll({
+      where: {
+        id: req.params.id
+      }
+    });
+    
+    const blogposts = postData.map((post) => post.get({ plain: true }));
+    console.log(blogposts)
+
     res.render('createComment', { 
       comments,
+      blogposts,
       id: req.params.id, 
       logged_in: req.session.logged_in 
     });
