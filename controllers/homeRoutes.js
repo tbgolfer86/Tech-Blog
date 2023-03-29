@@ -87,7 +87,7 @@ router.get('/dashboard/blogpost/:id', async (req, res) => {
   }
 });
 
-router.get('/comment/:id', async (req, res) => {
+router.get('/blogpost/:id', async (req, res) => {
   try {
     console.log("This is the blogpost ID: " + req.params.id)
     res.render('createComment', { 
