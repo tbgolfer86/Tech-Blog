@@ -14,7 +14,7 @@ router.get('/', async (req, res) => {
     });
 
     const blogposts = blogPostData.map((blogpost) => blogpost.get({ plain: true }));
-
+    
     res.render('homepage', { 
       blogposts, 
       logged_in: req.session.logged_in 
@@ -90,11 +90,22 @@ router.get('/dashboard/blogpost/:id', withAuth, async (req, res) => {
 router.get('/blogpost/:id', async (req, res) => {
   try {
     console.log("This is the blogpost ID: " + req.params.id)
+    const commentData = await Comment.findAll({
+      where: {
+        blogpost_id: req.params.id
+      }
+    });
+    
+    const comments = commentData.map((comment) => comment.get({ plain: true }));
+    console.log(comments)
+
     res.render('createComment', { 
+      ...comments,
       id: req.params.id, 
       logged_in: req.session.logged_in 
     });
   } catch (err) {
+    console.log(err)
     res.status(500).json(err);
   }
 });

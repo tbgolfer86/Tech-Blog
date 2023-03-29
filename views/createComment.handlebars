@@ -1,7 +1,11 @@
 <a href="/"><h1>Tech Blog</h1></a>
 
 <div class="inner-content">
-  {{> comments}}
+  {{#each comments as |comment| }}
+  <div>
+    <p>{{comment.message}}</p>
+  </div>
+  {{/each}} 
   <form class="create-comment" data-id="{{id}}">
     <label>Comment</label>  
     <input type="comment" id="post-comment" placeholder="I have really loved learning how to manage data in a SQL database." />
