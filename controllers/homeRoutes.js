@@ -79,14 +79,6 @@ router.get('/newpost', async (req, res) => {
   }
 });
 
-router.get('/newcomment', async (req, res) => {
-  try {
-    res.render('createComment');
-  } catch (err) {
-    res.status(500).json(err);
-  }
-});
-
 router.get('/blogpost/:id', async (req, res) => {
   try {
     console.log("This is the blogpost ID: " + req.params.id)
@@ -110,20 +102,6 @@ router.get('/blogpost/:id', async (req, res) => {
 router.get('/newcomment/:id', async (req, res) => {
   try {
     console.log("This is the blogpost ID: " + req.params.id)
-    console.log("This is the blogpost ID: " + req.params.id)
-    console.log("This is the blogpost ID: " + req.params.id)
-    // Get blogpost and JOIN with user data
-    // const commentData = await Comments.findAll({
-    //   where: {
-    //     golfer_id: req.params.id,
-    //   }
-    // });
-    // console.log(commentData)
-
-    // // Serialize data so the template can read it
-    // const comment = commentData.get({ plain: true });
-    
-    // Pass serialized data and session flag into template
     res.render('createComment', { 
       id: req.params.id, 
       logged_in: req.session.logged_in 
