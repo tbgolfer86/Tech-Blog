@@ -72,7 +72,7 @@ router.get('/newpost', async (req, res) => {
   }
 });
 
-router.get('/blogpost/:id', async (req, res) => {
+router.get('/dashboard/blogpost/:id', async (req, res) => {
   try {
     const blogPostData = await BlogPost.findByPk(req.params.id);
 

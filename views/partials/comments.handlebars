@@ -1,9 +1,7 @@
-{{#if comments.length}}
 <div class="inner-content">
-{{#each comments as |comments| }}
+{{#each comments as |comment| }}
   <div>
     <p>{{comments.message}}</p>
   </div>
 {{/each}} 
 </div>
-{{/if}}
