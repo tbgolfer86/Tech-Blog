@@ -3,8 +3,6 @@ const createCommentHandler = async (event) => {
     
   const message = document.querySelector('#post-comment').value.trim();
   const blogpost_id = event.target.getAttribute('data-id');
-  console.log(message)
-  console.log("THIS IS THE PARAM ID" + blogpost_id)
   
   if (message && blogpost_id) {
     const response = await fetch(`/api/comments`, {
@@ -16,7 +14,7 @@ const createCommentHandler = async (event) => {
     });
     
     if (response.ok) {
-      document.location.replace('/');
+      document.location.replace(`/newcomment/${blogpost_id}`);
     } else {
       alert('Failed to create comment');
     }
