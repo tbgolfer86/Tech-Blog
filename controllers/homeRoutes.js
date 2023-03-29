@@ -95,6 +95,10 @@ router.get('/blogpost/:id', async (req, res) => {
         {
           model: User,
           attributes: ['username'],
+        },
+        {
+          model: BlogPost,
+          attributes: ['title','contents','date_created'],
         }
       ],
       where: {
