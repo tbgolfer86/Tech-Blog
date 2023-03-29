@@ -100,7 +100,7 @@ router.get('/blogpost/:id', async (req, res) => {
     console.log(comments)
 
     res.render('createComment', { 
-      ...comments,
+      comments,
       id: req.params.id, 
       logged_in: req.session.logged_in 
     });
