@@ -4,8 +4,7 @@
   {{#each comments as |comment| }}
   <div>
     <p>{{comment.message}}</p>
-    <p>-{{comment.user.username}}</p> 
-    <p>({{comment.date_created}})</p>
+    <p>-Posted by {{comment.user.username}} on {{comment.date_created}}</p> 
   </div>
   {{/each}} 
   <form class="create-comment" data-id="{{id}}">
