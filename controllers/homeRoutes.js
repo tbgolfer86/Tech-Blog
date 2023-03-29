@@ -106,6 +106,12 @@ router.get('/blogpost/:id', async (req, res) => {
     console.log(comments)
 
     const postData = await BlogPost.findAll({
+      include: [
+        {
+          model: User,
+          attributes: ['username'],
+        }
+      ],
       where: {
         id: req.params.id
       }
