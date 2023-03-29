@@ -27,7 +27,6 @@ document
   .addEventListener('submit', editPostHandler);
 
 
-
 const delPostHandler = async (event) => {
   const id = event.target.getAttribute('data-id');
   console.log(id)
