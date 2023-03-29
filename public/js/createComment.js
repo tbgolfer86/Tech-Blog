@@ -2,14 +2,14 @@ const createCommentHandler = async (event) => {
   event.preventDefault();
     
   const message = document.querySelector('#post-comment').value.trim();
-  const id = event.target.getAttribute('data-id');
+  const blogpost_id = event.target.getAttribute('data-id');
   console.log(message)
-  console.log(id)
+  console.log("THIS IS THE PARAM ID" + blogpost_id)
   
-  if (message) {
+  if (message && blogpost_id) {
     const response = await fetch(`/api/comments`, {
       method: 'POST',
-      body: JSON.stringify({ message, id }),
+      body: JSON.stringify({ message, blogpost_id }),
       headers: {
         'Content-Type': 'application/json',
       },
