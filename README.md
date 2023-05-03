@@ -31,7 +31,8 @@
 
   ## Usage
   The user can start the server by using the command "node server.js" in the terminal.<br><br>
-  This app is also being hosted on [Heroku](https://uconn-tech-blog.herokuapp.com).<br><br>
+  This app is also being hosted on [Heroku](https://uconn-tech-blog.herokuapp.com).<br>
+  Disclaimer: This application may be disconnected from Heroku for billing purposes.<br><br>
    This screenshot shows the login page:<br>
   ![alt text](./public/images/Screenshot%202023-03-29%20at%203.18.18%20PM.png)<br><br>
    This screenshot shows the user dashboard:<br>
